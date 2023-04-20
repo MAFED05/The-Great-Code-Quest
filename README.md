@@ -154,9 +154,55 @@ for i in range(1, 10): #Comenzamos definiedo en rango de 1 a 9
 ***Solución***
 
 ``` python
+import math #Importamos de la libreria math
+def exponencial(x):
+    """
+    Esta función realiza el exponencial
+
+    Argumentos:
+    x: int = Número
+
+    Devuelve: el exponencial de x
+    """
+    return math.exp(x)
+def factorial(n:int): #Funcion para factorial
+    """
+        Esta función realiza el exponencial
+
+    Argumentos:
+    n: int = Número
+
+    Devuelve: el factorial de n
+    """
+    i = 1
+    for m in range(1, n+1):
+        i*=m
+    return i
+def seriemac(x,n):
+    """
+    Esta función halla la aproximación de una función a un número infino de términos
+
+    Argumentos:
+    x: float
+    n: int : es la cantidad de la serie
+
+    Devuelve: la aproximación
+    """
+    l=0
+    for i in range (1, n+1): #se coloca la formula de la seria maclaurin
+         l+= (x**i)/factorial(i)
+    return l
+
+if __name__ == "__main__":  #Funcion principal
+ x = float(input("Ingrese el valor de x:"))# se ingresa el valor de x
+ n = int(input("Ingrese la cantidad de las series Maclaurin:"))# Se ingresa la cantidad de serie maclaurin
+ print("El valor exponencial es =", exponencial(x)) # se imprime el exponencial de x
+ print("La aproximación con la serie Maclaurin es =", seriemac(x,n)) # se imprime la aproximacion con la serie maclaurin
 ```
 
 ***Código funcionando***
+[![Captura-de-pantalla-2023-04-20-114831.png](https://i.postimg.cc/28X2gQS7/Captura-de-pantalla-2023-04-20-114831.png)](https://postimg.cc/hfTLd7xX)
+
 
 ## Punto #9
 
@@ -166,9 +212,47 @@ for i in range(1, 10): #Comenzamos definiedo en rango de 1 a 9
 ***Solución***
 
 ``` python
+import math
+def seno(x): #Función para seno
+    """
+    Esta función halla el seno del término x
+    Argumentos:
+    x: float
+    Devuelve: la función seno
+    """
+    return math.sin(x)
+def factorial(n:int): #Función para factorial
+    """
+    Esta función realiza el exponencial
+    Argumentos:
+    n: int = Número
+    Devuelve: el factorial de n
+    """
+    i = 1
+    for m in range(1, n+1):
+        i*=m
+    return i
+def seriemac(x,n):
+    """
+    Esta función halla la aproximación de una función a un número infinito de términos
+    Argumentos:
+    x: float
+    n: int : es la cantidad de la serie
+    Devuelve: la aproximación
+    """
+    l=0
+    for i in range (n+1): #Se coloca la fórmula de la serie Maclaurin
+         l+= (-1)*i * x*(2*i + 1) / factorial(2*i + 1)
+    return l
+if __name__ == "__main__":  #Función principal
+ x = float(input("Ingrese el valor de x:"))#Se ingresa el valor de x
+ n = int(input("Ingrese la cantidad de las series Maclaurin:"))# Se ingresa la cantidad de serie Maclaurin
+ print("El seno del valor ingresado es =", seno(x)) # Se imprime el seno de x
+ print("La aproximación en la serie Maclaurin es =", seriemac(x,n)) # Se imprime la aproximación con la serie Maclaurin
 ```
 
 ***Código funcionando***
+[![image.png](https://i.postimg.cc/ZKgxwJwf/image.png)](https://postimg.cc/bsxnJfcb)
 
 ## Punto #10
 
@@ -177,7 +261,39 @@ for i in range(1, 10): #Comenzamos definiedo en rango de 1 a 9
 ***Solución***
 
 ``` python
+import math
+def arcotan(x):
+    """
+    Esta función halla el seno del término x
+    Argumentos:
+    x: float
+    Devuelve: el seno
+    """
+    return math.atan(x)
+def seriemc(x,n): # Se hace con la serie Maclaurin la aproximación
+    """
+    Esta función halla la aproximación de una función a un número infinito de términos, está impuesta en el rango -1 a 1
+    Argumentos
+    x: float
+    n: int : es la cantidad de la serie
+    Devuelve: la aproximación
+    """
+    l=0
+    for i in range(n+1):
+        l += ((-1)*i)(x**((2*i)+1))/((2*i)+1)
+    return l
+
+if __name__ == "__main__":  #Función principal
+ x = float(input("ingresar x entre -1 y 1: ")) # Se pide el valor de x entre -1 y 1
+ n=int(input("ingresar cantidad de las serie de Maclaurin : ")) #Se pide la cantidad de la serie
+ print("El valor de la arcotangente es de : ", arcotan(x)) # Se imprime el valor "real"
+ print("La aproximación en la serie Maclaurin es =", seriemc(x,n))  # Se imprime la aproximación
 ```
 
 ***Código funcionando***
+[![Captura-de-pantalla-2023-04-20-121023.png](https://i.postimg.cc/wBxPpqdh/Captura-de-pantalla-2023-04-20-121023.png)](https://postimg.cc/NKVb8wFM)
+
+Y listo, esto seria todo por este repo, espero sea lo suficientemente claro y les ayude en algo.
+
+Muchas gracias
 
